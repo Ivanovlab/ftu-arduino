@@ -142,5 +142,3 @@ void loop() {
  system_state = system_fsm_transition(system_state,test_start,test_stop);
  system_fsm_run(system_state);
 }
-
-
