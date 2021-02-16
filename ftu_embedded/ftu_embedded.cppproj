@@ -20,26 +20,40 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
     <eraseonlaunchrule>1</eraseonlaunchrule>
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.39.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.42.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <ResetRule>0</ResetRule>
     <EraseKey />
+    <avrtool>custom</avrtool>
+    <avrtoolserialnumber />
+    <avrdeviceexpectedsignature>0x1001030A</avrdeviceexpectedsignature>
+    <custom>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+      </ToolOptions>
+      <ToolType xmlns="">custom</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Custom Programming Tool</ToolName>
+    </custom>
+    <CustomProgrammingToolCommand>C:\Program Files (x86)\BOSSA\MKR1000.bat</CustomProgrammingToolCommand>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -51,7 +65,7 @@
   <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
   <armgcc.compiler.symbols.DefSymbols>
     <ListValues>
-      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=48000000L</Value>
       <Value>printf=iprintf</Value>
@@ -68,35 +82,35 @@
   <armgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../../../ftu_embedded</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
       <Value>{vm.intellisense.add-paths}</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
@@ -106,7 +120,7 @@
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcccpp.compiler.symbols.DefSymbols>
     <ListValues>
-      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=48000000L</Value>
       <Value>printf=iprintf</Value>
@@ -123,35 +137,35 @@
   <armgcccpp.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../../../ftu_embedded</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
       <Value>{vm.intellisense.add-paths}</Value>
     </ListValues>
   </armgcccpp.compiler.directories.IncludePaths>
@@ -183,10 +197,366 @@
   <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
 </ArmGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>../../../ftu_embedded;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;{vm.intellisense.add-paths};C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoMqttClient/src;C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>../../../ftu_embedded;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;{vm.intellisense.add-paths};C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoMqttClient/src;C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/arduino_zero;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/HID;C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src;C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src;C:/Users/micha/Desktop/FTU-AR~1/FTU_EM~1;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/cores/arduino;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/variants/mkr1000;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/LIBRAR~1/SPI;C:/Users/micha/DOCUME~1/Arduino/LIBRAR~1/ARDUIN~1.X/src;C:/Users/micha/DOCUME~1/Arduino/LIBRAR~1/RTCZER~1/src;C:/PROGRA~2/Atmel/Studio/7.0/EXTENS~1/q0a01aps.ss4/MICROP~1/default/DEBUGG~1/VM_DBG;</VMSETTING_IncludePaths>
     <VisualMicroSettings>
       <VisualMicroSettings>
-        <config.Debug.customdebug_mkr1000_debugger_type>none</config.Debug.customdebug_mkr1000_debugger_type>
+        <config.Debug.customdebug_mkr1000_debugger_type>universal</config.Debug.customdebug_mkr1000_debugger_type>
+        <config.Debug.customdebug_arduino_zero_edbg_debugger_type>universal</config.Debug.customdebug_arduino_zero_edbg_debugger_type>
+        <arduino.board.name>mkr1000</arduino.board.name>
+        <arduino.board.desc>Arduino MKR1000</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino MKR1000
+vid.0=0x2341
+pid.0=0x804e
+vid.1=0x2341
+pid.1=0x004e
+vid.2=0x2341
+pid.2=0x824e
+vid.3=0x2341
+pid.3=0x024e
+debug.tool=auto
+upload.tool=bossac
+upload.protocol=sam-ba
+upload.maximum_size=262144
+upload.use_1200bps_touch=true
+upload.wait_for_upload_port=true
+upload.native_usb=true
+build.mcu=cortex-m0plus
+build.f_cpu=48000000L
+build.usb_product="Arduino MKR1000"
+build.usb_manufacturer="Arduino LLC"
+build.board=SAMD_MKR1000
+build.core=arduino
+build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags}
+build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+build.openocdscript=openocd_scripts/arduino_zero.cfg
+build.variant=mkr1000
+build.vid=0x2341
+build.pid=0x804e
+bootloader.tool=openocd
+bootloader.file=mkr1000/samd21_sam_ba_arduino_mkr1000.bin
+runtime.ide.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\q0a01aps.ss4\Micro Platforms\visualmicro\ide-atmel
+runtime.os=windows
+build.system.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6\system
+runtime.ide.version=108010
+target_package=arduino
+target_platform=samd
+runtime.hardware.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd
+originalid=mkr1000
+intellisense.tools.path={runtime.tools.arm-none-eabi-gcc.path}
+intellisense.include.paths={intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3;{intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3\arm-none-eabi;{intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3\bits;{intellisense.tools.path}\arm-none-eabi\include;{intellisense.tools.path}\arm-none-eabi\include\sys;{build.system.path};{runtime.hardware.path}/avr;{runtime.hardware.path}/usb;{intellisense.tools.path}\lib\gcc\arm-none-eabi\4.8.3\include;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path};{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include;{runtime.tools.CMSIS.path}\CMSIS\include;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\component;{vm.intellisense.add-paths}
+tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
+tools.atprogram.cmd.setwinpath=true
+tools.atprogram.program.params.verbose=-v
+tools.atprogram.program.params.quiet=-q
+tools.atprogram.program.pattern="{cmd.path}" -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.atprogram.program.xpattern="{cmd.path}" {AVRSTUDIO_BACKEND_CONNECTION} -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.openocd.scriptPath=-s "{path}/share/openocd/scripts/"
+tools.openocd.targetCmd=-f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.openocd.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.openocd.initCmd=-c "init"
+tools.openocd.debug.verbose=-d2
+tools.openocd.logging=
+tools.openocd.debug.address=localhost:3333
+tools.openocd.boardCmd=
+tools.gdb1.name=Open OCD + GDB
+tools.gdb1.cmd=arm-none-eabi-gdb.exe
+tools.gdb1.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.gdb1.server=openocd
+tools.gdb1.args=-interpreter=mi -d "{build.project_path}"
+tools.gdb1.pattern="{path}/{cmd}" {args}
+tools.atmelICE.server.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.bmp_upload.debug.args=-nh -b 115200 -ex "target extended-remote \\.\{serial.debug.port}" -ex "monitor swdp_scan" -ex "attach 1"
+tools.openocd.debug.pattern="{path}/{cmd}" {debug.verbose} {logging} {scriptPath} {boardCmd} {targetCmd} {initCmd}
+tools.jlink.server.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.stlinkv2.server.targetCmd=-c "set CPUTAPID 0x0bc11477" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+debug_menu.debugger_type.hwdebugger=Hardware
+debug_menu.hwdebugger=Debugger
+debug_menu.hwdebugger.atmelICE=Atmel ICE
+debug_menu.hwdebugger.atmelICE.debug.tool=atmelICE
+meta_atmelICE.image.connect=https://www.visualmicro.com/pics/Debug-Break-SAMD-AtmelICE-Connections.png
+debug_menu.hwdebugger.bmp=Black Magic (SWD)
+debug_menu.hwdebugger.bmp.debug.tool=bmp_upload
+meta_bmp.sentence=This debugger requires the 20-pin ribbon cable to link to your target, see connections below
+meta_bmp.comment=Ensure the COM Port for the Black Magic is selected before attaching the Debugger. . Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_bmp.image.connect=https://www.visualmicro.com/pics/Debug-Help-SAMD-BMP-Connections.png
+meta_bmp.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-BMP-VSOnly.png
+meta_bmp.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+debug_menu.hwdebugger.builtin=Built In (EDBG)
+debug_menu.hwdebugger.builtin.debug.tool=gdb1
+meta_gdb1.sentence=This debugger requires the secondary 'debug' port to be attached via USB to your PC
+meta_gdb1.comment=Ensure the (Debug) variant of the board is selected, and the 'debug' COM Port is selected. . Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_gdb1.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-EDBG-VSOnly.png
+debug_menu.hwdebugger.jlink=Segger JLink (SWD)
+debug_menu.hwdebugger.jlink.debug.tool=jlink
+meta_jlink.sentence=This debugger will require some wiring to connect it to your target SAMD board
+meta_jlink.comment=Wiring can be found in the below image, and the 'https://zadig.akeo.ie/' tool is required to replace the USB Driver on Interface 0 with 'WinUSB'. Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_jlink.image.connect=https://www.visualmicro.com/pics/Debug-Help-SAMD-Jlink-Connections.png
+meta_jlink.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-Jlink-VSOnly.png
+meta_jlink.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+debug_menu.hwdebugger.stlinkv2=STLINKv2
+debug_menu.hwdebugger.stlinkv2.debug.tool=stlinkv2
+meta_stlinkv2.sentence=This debugger requires the 20-pin ribbon cable to link to your target.
+meta_stlinkv2.comment=Wiring can be found in the below image, and the 'https://zadig.akeo.ie/' tool is required to replace the USB Driver on Interface 0 with 'WinUSB'. Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_stlinkv2.image.connect=https://www.visualmicro.com/pics/Debug-Break-SAMD-STLinkv2-VSOnly.png
+meta_stlinkv2.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+tools.atmelICE.program.targetCmd=-c "transport select swd"  -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.atmelICE.program.programCmd=-c "reset_config; telnet_port disabled; program {{build.path}/{build.project_name}.elf} reset;reset_config; shutdown"
+tools.atmelICE.bootloader.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.atmelICE.bootloader.programCmd=-c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.jlink.program.targetCmd=-c "transport select swd"  -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.jlink.program.programCmd=-c "reset_config; telnet_port disabled; program {{build.path}/{build.project_name}.elf} reset;reset_config; shutdown"
+tools.jlink.bootloader.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.jlink.bootloader.programCmd=-c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.vmopenocd.program.params.verify=verify
+tools.vmopenocd.program.params.noverify=
+tools.bmp_upload.program.pattern={program.path}/{program.cmd} -nx -b 230400 -batch -ex "set confirm off" -ex "target extended-remote \\.\{serial.port}" -ex "monitor swdp_scan" -ex "attach 1" -ex "load" -ex "compare-sections" -ex "kill" "{build.path}/{build.project_name}.elf" -ex "kill"
+version=1.8.6
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall -Wno-expansion-to-defined
+compiler.warning_flags.all=-Wall -Wextra -Wno-expansion-to-defined
+compiler.optimization_flags=-Os
+compiler.optimization_flags.release=-Os
+compiler.optimization_flags.debug=-Og -g3
+compiler.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+compiler.c.cmd=arm-none-eabi-gcc
+compiler.c.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD
+compiler.c.elf.cmd=arm-none-eabi-g++
+compiler.c.elf.flags={compiler.optimization_flags} -Wl,--gc-sections -save-temps
+compiler.S.cmd=arm-none-eabi-gcc
+compiler.S.flags=-c -g -x assembler-with-cpp -MMD
+compiler.cpp.cmd=arm-none-eabi-g++
+compiler.cpp.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD
+compiler.ar.cmd=arm-none-eabi-ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=arm-none-eabi-objcopy
+compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
+compiler.elf2hex.bin.flags=-O binary
+compiler.elf2hex.hex.flags=-O ihex -R .eeprom
+compiler.elf2hex.cmd=arm-none-eabi-objcopy
+compiler.ldflags=-mcpu={build.mcu} -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align
+compiler.size.cmd=arm-none-eabi-size
+compiler.define=-DARDUINO=
+compiler.readelf.cmd=arm-none-eabi-readelf
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.cpp.extra_flags=
+compiler.S.extra_flags=
+compiler.ar.extra_flags=
+compiler.elf2hex.extra_flags=
+compiler.arm.cmsis.c.flags="-I{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Include/" "-I{runtime.tools.CMSIS-Atmel-1.2.0.path}/CMSIS/Device/ATMEL/"
+compiler.arm.cmsis.ldflags="-L{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Lib/GCC/" -larm_cortexM0l_math
+compiler.libraries.ldflags=
+build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DUSBCON '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.S.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+archive_file_path={build.path}/{archive_file}
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nano.specs --specs=nosys.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} {compiler.libraries.ldflags} -Wl,--start-group {compiler.arm.cmsis.ldflags} -lm "{build.path}/{archive_file}" -Wl,--end-group
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+build.preferred_out_format=bin
+recipe.output.tmp_file={build.project_name}.{build.preferred_out_format}
+recipe.output.save_file={build.project_name}.{build.variant}.{build.preferred_out_format}
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.text|\.data|)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
+tools.avrdude.path={runtime.tools.avrdude.path}
+tools.avrdude.cmd={path}/bin/avrdude
+tools.avrdude.config.path={path}/etc/avrdude.conf
+tools.avrdude.upload.params.verbose=-v -v
+tools.avrdude.upload.params.quiet=-q -q
+tools.avrdude.upload.params.noverify=-V
+tools.avrdude.upload.pattern="{cmd}" "-C{config.path}" {upload.verbose} -p{build.emu.mcu} -c{upload.protocol} -P{serial.port} -b{upload.speed} "-Uflash:w:{build.path}/{build.project_name}.hex:i"
+tools.avrdude_remote.upload.pattern="openocd --version 2&gt;&amp;1 | grep 2016 &amp;&amp; if opkg update; then opkg upgrade openocd; exit 1; else echo 'Please connect your board to the Internet in order to upgrade tools' &gt;&amp;2; exit 1; fi || /usr/bin/run-avrdude /tmp/sketch.hex"
+tools.avrdude.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.avrdude.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.bossac.path={runtime.tools.bossac-1.7.0-arduino3.path}
+tools.bossac.cmd=bossac.exe
+tools.bossac.cmd.windows=bossac.exe
+tools.bossac.upload.params.verbose=-i -d
+tools.bossac.upload.params.quiet=
+tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -i -e -w -v "{build.path}/{build.project_name}.bin" -R
+tools.bossac_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
+tools.bossac.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.bossac.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.bossacI.path={runtime.tools.bossac-1.7.0-arduino3.path}
+tools.bossacI.cmd=bossac.exe
+tools.bossacI.cmd.windows=bossac.exe
+tools.bossacI.upload.params.verbose=-i -d
+tools.bossacI.upload.params.quiet=
+tools.bossacI.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -I -U {upload.native_usb} -i -e -w "{build.path}/{build.project_name}.bin" -R
+tools.bossacI_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
+tools.bossacI.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.bossacI.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.openocd.path={runtime.tools.openocd-0.10.0-arduino7.path}
+tools.openocd.cmd=bin/openocd.exe
+tools.openocd.cmd.windows=bin/openocd.exe
+tools.openocd.upload.params.verbose=-d2
+tools.openocd.upload.params.quiet=-d0
+tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown"
+tools.openocd.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.openocd.upload.network_pattern={network_cmd} -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.openocd.program.params.verbose=-d2
+tools.openocd.program.params.quiet=-d0
+tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd.erase.params.verbose=-d3
+tools.openocd.erase.params.quiet=-d0
+tools.openocd.erase.pattern=
+tools.openocd.bootloader.params.verbose=-d2
+tools.openocd.bootloader.params.quiet=-d0
+tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.openocd-withbootsize.path={runtime.tools.openocd-0.10.0-arduino7.path}
+tools.openocd-withbootsize.cmd=bin/openocd.exe
+tools.openocd-withbootsize.cmd.windows=bin/openocd.exe
+tools.openocd-withbootsize.upload.params.verbose=-d2
+tools.openocd-withbootsize.upload.params.quiet=-d0
+tools.openocd-withbootsize.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown"
+tools.openocd-withbootsize.program.params.verbose=-d2
+tools.openocd-withbootsize.program.params.quiet=-d0
+tools.openocd-withbootsize.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd-withbootsize.erase.params.verbose=-d3
+tools.openocd-withbootsize.erase.params.quiet=-d0
+tools.openocd-withbootsize.erase.pattern=
+tools.openocd-withbootsize.bootloader.params.verbose=-d2
+tools.openocd-withbootsize.bootloader.params.quiet=-d0
+tools.openocd-withbootsize.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+tools.gdb.cmd=arm-none-eabi-gdb.exe
+tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
+tools.gdb.debug.pattern="{path}/{cmd}" --interpreter=mi2 -ex "set pagination off" -ex 'target extended-remote | {tools.openocd.path}/{tools.openocd.cmd} -s "{tools.openocd.path}/share/openocd/scripts/" --file "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "gdb_port pipe" -c "telnet_port 0"' {build.path}/{build.project_name}.elf
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\q0a01aps.ss4\Micro Platforms\arduino16x
+edbg.name=Atmel EDBG
+edbg.communication=USB
+edbg.protocol=
+edbg.program.protocol=
+edbg.program.tool=openocd
+edbg.program.extra_params=
+atmel_ice.name=Atmel-ICE
+atmel_ice.communication=USB
+atmel_ice.protocol=
+atmel_ice.program.protocol=
+atmel_ice.program.tool=openocd
+atmel_ice.program.extra_params=
+sam_ice.name=Atmel SAM-ICE
+sam_ice.communication=USB
+sam_ice.protocol=
+sam_ice.program.protocol=
+sam_ice.program.tool=openocd
+sam_ice.program.extra_params=
+runtime.tools.arm-none-eabi-gcc.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARM-NO~1\7-2017q4
+runtime.tools.arm-none-eabi-gcc-7-2017q4.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARM-NO~1\7-2017q4
+runtime.tools.openocd.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\openocd\010~1.0-A
+runtime.tools.openocd-0.10.0-arduino7.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\openocd\010~1.0-A
+runtime.tools.CMSIS.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS\4583DE~1.0
+runtime.tools.CMSIS-4.5.0.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS\4583DE~1.0
+runtime.tools.CMSIS-Atmel.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS-~1\125586~1.0
+runtime.tools.CMSIS-Atmel-1.2.0.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS-~1\125586~1.0
+runtime.tools.arduinoOTA.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARDUIN~1\120584~1.1
+runtime.tools.arduinoOTA-1.2.1.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARDUIN~1\120584~1.1
+runtime.vm.boardinfo.id=mkr1000
+runtime.vm.boardinfo.name=mkr1000
+runtime.vm.boardinfo.desc=Arduino MKR1000
+runtime.vm.boardinfo.src_location=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+ide.hint=Ready-To-Go IDE: Use the Board and Library managers to install.
+ide.location.key=visualmicro
+ide.location.ide.auto=true
+ide.location.ide.winreg=Arduino Default Application
+ide.location.sketchbook.winreg=Arduino Default Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.8.13
+ide.default.version=10802
+ide.platforms.basedon=arduino16x
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.exe_name=arduino
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.hosts=atmel
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+ide.location.preferences.arduinoData={runtime.sketchbook.path}\ArduinoData
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+ide.debug_menu.debugger_type=Debug
+ide.debug_menu.debugger_type.none=Off
+ide.debug_menu.none.debug.tool=no_debug
+ide.debug_menu.debugger_type.universal=Serial
+ide.debug_menu.universal.debug.tool=auto
+ide.debug_menu.debugger_type.hwdebugger=Hardware
+ide.debug_menu.hwdebugger=Debugger
+ide.debug_menu.hwdebugger.custom_debugger=Manual/Custom
+ide.debug_menu.hwdebugger.custom_debugger.debug.tool=dbg_external
+ide.meta_custom_debugger.sentence=Provides a build that includes debug defines and will launch a custom debugger if one is provided.
+ide.meta_custom_debugger.paragraph=This is option is for advanced use. It is recommended that a pre-configured debugger be selected when available in this list. Usage: Optionally add a customer debugger to the project. A 'debugger_launch.json' file shares the same command syntax that is used by the VsCode debugger. Custom debuggers can be targeted at a board and/or variant and/or configuration name. IE: [variant].[configuration_name][.]debugger_launch.json
+ide.meta_custom_debugger.reference.usage.url=https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md#customlaunchsetupcommands
+ide.meta_custom_debugger.reference.connect.url=https://docs.microsoft.com/en-us/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2019
+ide.compiler_flags_no_opt=-O0
+ide.debug_menu.vm_disable_optimization=Disable Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_default=Default Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj=No Project  Optimization
+ide.debug_menu.vm_disable_opt_proj.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj_libs=No Project + Libraries Optimization
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_all=No Optimization
+ide.meta_vm_disable_opt_all.sentence=Disable compiler optimization for all sources:- Project, Library and Platform.
+ide.meta_vm_disable_opt_all.comment=After switching between 'No Optimization' and other optimization values, please click "Solution Clean" or switch off (or cycle) 'vMicro&gt;Compiler&gt;Shared Cache For Cores'. NOTE: Changing optimization settings can cause build errors or result in overly large programs.
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_core={ide.compiler_flags_no_opt}
+ide.appid=visualmicro
+location.sketchbook=C:\Users\micha\Documents\Arduino
+build.core.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6\cores\arduino
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+runtime.platform.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+vm.platformname.name=samd
+build.arch=SAMD
+build.project_name=ftu_embedded.ino
+build.project_path=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded
+sketch_path=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded
+ProjectDir=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded\
+build.path=C:\Users\micha\AppData\Local\Temp\VMBuilds\FTU_EM~1\mkr1000\Debug
+vm.sketch_ino_cpp_name=ftu_embedded.cpp
+builder.noino=false
+tools.ctags.path={runtime.tools.ctags.path}
+tools.ctags.cmd.path={path}/ctags
+tools.ctags.pattern="{cmd.path}" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "{source_file}"
+preproc.macros.flags=-w -x c++ -E -CC
+preproc.defines.flags=-w -x c++ -E -dM
+recipe.preproc.macros="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {preproc.macros.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{preprocessed_file_path}"
+build.architecture=7-2017q4
+vmresolved.compiler.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4\bin\
+vmresolved.tools.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+</arduino.board.property_bag>
+        <arduino.build.mcu>cortex-m0plus</arduino.build.mcu>
+        <arduino.build.f_cpu>48000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>sam-ba</arduino.upload.protocol>
+        <arduino.upload.maximum_size>262144</arduino.upload.maximum_size>
+        <visualmicro.application.name>visualmicro</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>samd</visualmicro.platform.name>
+        <config.Debug.customdebug_mkr1000_vm_disable_optimization>vm_disable_opt_default</config.Debug.customdebug_mkr1000_vm_disable_optimization>
+        <arduino.upload.port>COM3</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>
@@ -200,7 +570,7 @@
   <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
   <armgcc.compiler.symbols.DefSymbols>
     <ListValues>
-      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=48000000L</Value>
       <Value>printf=iprintf</Value>
@@ -217,35 +587,35 @@
   <armgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../../../ftu_embedded</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
       <Value>{vm.intellisense.add-paths}</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
@@ -255,7 +625,7 @@
   <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
   <armgcccpp.compiler.symbols.DefSymbols>
     <ListValues>
-      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=48000000L</Value>
       <Value>printf=iprintf</Value>
@@ -272,35 +642,35 @@
   <armgcccpp.compiler.directories.IncludePaths>
     <ListValues>
       <Value>../../../ftu_embedded</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src</Value>
-      <Value>C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
-      <Value>C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
-      <Value>C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src</Value>
+      <Value>C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr</Value>
+      <Value>C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component</Value>
+      <Value>C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance</Value>
       <Value>{vm.intellisense.add-paths}</Value>
     </ListValues>
   </armgcccpp.compiler.directories.IncludePaths>
@@ -332,10 +702,366 @@
   <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
 </ArmGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>../../../ftu_embedded;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;{vm.intellisense.add-paths};C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoMqttClient/src;C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>../../../ftu_embedded;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/cores/arduino/USB;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/variants/mkr1000;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/system;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/Rohit/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;{vm.intellisense.add-paths};C:/Users/Rohit/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.1/libraries/SPI;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoMqttClient/src;C:/Users/Rohit/Documents/Arduino/libraries/RTCZero/src;C:/Users/Rohit/Documents/Arduino/libraries/ArduinoJson/src;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/SPI;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/avr;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/cores/arduino/USB;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/arduino_zero;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/Include/;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS-~1/125586~1.0/CMSIS/Device/ATMEL/;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/arm-none-eabi;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/c++/4.8.3/bits;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/arm-none-eabi/include/sys;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/system;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/avr;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/usb;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/ARM-NO~1/7-2017q4/lib/gcc/arm-none-eabi/4.8.3/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/pio;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/CMSIS/include;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0/Device/ATMEL/samd21/include/pio;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/component;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/tools/CMSIS/4583DE~1.0../../CMSIS-Atmel/1.1.0/CMSIS/Device/ATMEL/samd21/include/instance;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/variants/mkr1000;C:/Users/micha/AppData/Local/arduino15/packages/arduino/hardware/samd/1.8.6/libraries/HID;C:/Users/micha/Documents/Arduino/libraries/ArduinoJson-6.x/src;C:/Users/micha/Documents/Arduino/libraries/RTCZero-master/src;C:/Users/micha/Desktop/FTU-AR~1/FTU_EM~1;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/cores/arduino;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/variants/mkr1000;C:/Users/micha/AppData/Local/ARDUIN~1/packages/arduino/hardware/samd/189A5F~1.6/LIBRAR~1/SPI;C:/Users/micha/DOCUME~1/Arduino/LIBRAR~1/ARDUIN~1.X/src;C:/Users/micha/DOCUME~1/Arduino/LIBRAR~1/RTCZER~1/src;C:/PROGRA~2/Atmel/Studio/7.0/EXTENS~1/q0a01aps.ss4/MICROP~1/default/DEBUGG~1/VM_DBG;</VMSETTING_IncludePaths>
     <VisualMicroSettings>
       <VisualMicroSettings>
-        <config.Debug.customdebug_mkr1000_debugger_type>none</config.Debug.customdebug_mkr1000_debugger_type>
+        <config.Debug.customdebug_mkr1000_debugger_type>universal</config.Debug.customdebug_mkr1000_debugger_type>
+        <config.Debug.customdebug_arduino_zero_edbg_debugger_type>universal</config.Debug.customdebug_arduino_zero_edbg_debugger_type>
+        <arduino.board.name>mkr1000</arduino.board.name>
+        <arduino.board.desc>Arduino MKR1000</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino MKR1000
+vid.0=0x2341
+pid.0=0x804e
+vid.1=0x2341
+pid.1=0x004e
+vid.2=0x2341
+pid.2=0x824e
+vid.3=0x2341
+pid.3=0x024e
+debug.tool=auto
+upload.tool=bossac
+upload.protocol=sam-ba
+upload.maximum_size=262144
+upload.use_1200bps_touch=true
+upload.wait_for_upload_port=true
+upload.native_usb=true
+build.mcu=cortex-m0plus
+build.f_cpu=48000000L
+build.usb_product="Arduino MKR1000"
+build.usb_manufacturer="Arduino LLC"
+build.board=SAMD_MKR1000
+build.core=arduino
+build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags}
+build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+build.openocdscript=openocd_scripts/arduino_zero.cfg
+build.variant=mkr1000
+build.vid=0x2341
+build.pid=0x804e
+bootloader.tool=openocd
+bootloader.file=mkr1000/samd21_sam_ba_arduino_mkr1000.bin
+runtime.ide.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\q0a01aps.ss4\Micro Platforms\visualmicro\ide-atmel
+runtime.os=windows
+build.system.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6\system
+runtime.ide.version=108010
+target_package=arduino
+target_platform=samd
+runtime.hardware.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd
+originalid=mkr1000
+intellisense.tools.path={runtime.tools.arm-none-eabi-gcc.path}
+intellisense.include.paths={intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3;{intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3\arm-none-eabi;{intellisense.tools.path}\arm-none-eabi\include\c++\4.8.3\bits;{intellisense.tools.path}\arm-none-eabi\include;{intellisense.tools.path}\arm-none-eabi\include\sys;{build.system.path};{runtime.hardware.path}/avr;{runtime.hardware.path}/usb;{intellisense.tools.path}\lib\gcc\arm-none-eabi\4.8.3\include;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.2.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path};{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include;{runtime.tools.CMSIS.path}\CMSIS\include;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\component;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\instance;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\pio;{runtime.tools.CMSIS.path}..\..\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\samd21\include\component;{vm.intellisense.add-paths}
+tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
+tools.atprogram.cmd.setwinpath=true
+tools.atprogram.program.params.verbose=-v
+tools.atprogram.program.params.quiet=-q
+tools.atprogram.program.pattern="{cmd.path}" -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.atprogram.program.xpattern="{cmd.path}" {AVRSTUDIO_BACKEND_CONNECTION} -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.openocd.scriptPath=-s "{path}/share/openocd/scripts/"
+tools.openocd.targetCmd=-f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.openocd.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.openocd.initCmd=-c "init"
+tools.openocd.debug.verbose=-d2
+tools.openocd.logging=
+tools.openocd.debug.address=localhost:3333
+tools.openocd.boardCmd=
+tools.gdb1.name=Open OCD + GDB
+tools.gdb1.cmd=arm-none-eabi-gdb.exe
+tools.gdb1.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.gdb1.server=openocd
+tools.gdb1.args=-interpreter=mi -d "{build.project_path}"
+tools.gdb1.pattern="{path}/{cmd}" {args}
+tools.atmelICE.server.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.bmp_upload.debug.args=-nh -b 115200 -ex "target extended-remote \\.\{serial.debug.port}" -ex "monitor swdp_scan" -ex "attach 1"
+tools.openocd.debug.pattern="{path}/{cmd}" {debug.verbose} {logging} {scriptPath} {boardCmd} {targetCmd} {initCmd}
+tools.jlink.server.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.stlinkv2.server.targetCmd=-c "set CPUTAPID 0x0bc11477" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+debug_menu.debugger_type.hwdebugger=Hardware
+debug_menu.hwdebugger=Debugger
+debug_menu.hwdebugger.atmelICE=Atmel ICE
+debug_menu.hwdebugger.atmelICE.debug.tool=atmelICE
+meta_atmelICE.image.connect=https://www.visualmicro.com/pics/Debug-Break-SAMD-AtmelICE-Connections.png
+debug_menu.hwdebugger.bmp=Black Magic (SWD)
+debug_menu.hwdebugger.bmp.debug.tool=bmp_upload
+meta_bmp.sentence=This debugger requires the 20-pin ribbon cable to link to your target, see connections below
+meta_bmp.comment=Ensure the COM Port for the Black Magic is selected before attaching the Debugger. . Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_bmp.image.connect=https://www.visualmicro.com/pics/Debug-Help-SAMD-BMP-Connections.png
+meta_bmp.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-BMP-VSOnly.png
+meta_bmp.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+debug_menu.hwdebugger.builtin=Built In (EDBG)
+debug_menu.hwdebugger.builtin.debug.tool=gdb1
+meta_gdb1.sentence=This debugger requires the secondary 'debug' port to be attached via USB to your PC
+meta_gdb1.comment=Ensure the (Debug) variant of the board is selected, and the 'debug' COM Port is selected. . Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_gdb1.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-EDBG-VSOnly.png
+debug_menu.hwdebugger.jlink=Segger JLink (SWD)
+debug_menu.hwdebugger.jlink.debug.tool=jlink
+meta_jlink.sentence=This debugger will require some wiring to connect it to your target SAMD board
+meta_jlink.comment=Wiring can be found in the below image, and the 'https://zadig.akeo.ie/' tool is required to replace the USB Driver on Interface 0 with 'WinUSB'. Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_jlink.image.connect=https://www.visualmicro.com/pics/Debug-Help-SAMD-Jlink-Connections.png
+meta_jlink.image.operation=https://www.visualmicro.com/pics/Debug-Break-SAMD-Jlink-VSOnly.png
+meta_jlink.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+debug_menu.hwdebugger.stlinkv2=STLINKv2
+debug_menu.hwdebugger.stlinkv2.debug.tool=stlinkv2
+meta_stlinkv2.sentence=This debugger requires the 20-pin ribbon cable to link to your target.
+meta_stlinkv2.comment=Wiring can be found in the below image, and the 'https://zadig.akeo.ie/' tool is required to replace the USB Driver on Interface 0 with 'WinUSB'. Set vMicro &gt; Debugger &gt; 'Compiler Optimization' to 'No Project', 'No Project + Libraries' or 'None' when debugging. (NOTE: Changing the optimization setting for this platform might cause compilation errors with certain code such as HardwareSerial.)
+meta_stlinkv2.image.connect=https://www.visualmicro.com/pics/Debug-Break-SAMD-STLinkv2-VSOnly.png
+meta_stlinkv2.reference.usage.url=https://www.visualmicro.com/page/User-Guide.aspx?doc=Arduino-gdb-Tutorial.html
+tools.atmelICE.program.targetCmd=-c "transport select swd"  -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.atmelICE.program.programCmd=-c "reset_config; telnet_port disabled; program {{build.path}/{build.project_name}.elf} reset;reset_config; shutdown"
+tools.atmelICE.bootloader.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.atmelICE.bootloader.programCmd=-c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.jlink.program.targetCmd=-c "transport select swd"  -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.jlink.program.programCmd=-c "reset_config; telnet_port disabled; program {{build.path}/{build.project_name}.elf} reset;reset_config; shutdown"
+tools.jlink.bootloader.targetCmd=-c "transport select swd" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}"
+tools.jlink.bootloader.programCmd=-c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.vmopenocd.program.params.verify=verify
+tools.vmopenocd.program.params.noverify=
+tools.bmp_upload.program.pattern={program.path}/{program.cmd} -nx -b 230400 -batch -ex "set confirm off" -ex "target extended-remote \\.\{serial.port}" -ex "monitor swdp_scan" -ex "attach 1" -ex "load" -ex "compare-sections" -ex "kill" "{build.path}/{build.project_name}.elf" -ex "kill"
+version=1.8.6
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall -Wno-expansion-to-defined
+compiler.warning_flags.all=-Wall -Wextra -Wno-expansion-to-defined
+compiler.optimization_flags=-Os
+compiler.optimization_flags.release=-Os
+compiler.optimization_flags.debug=-Og -g3
+compiler.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+compiler.c.cmd=arm-none-eabi-gcc
+compiler.c.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD
+compiler.c.elf.cmd=arm-none-eabi-g++
+compiler.c.elf.flags={compiler.optimization_flags} -Wl,--gc-sections -save-temps
+compiler.S.cmd=arm-none-eabi-gcc
+compiler.S.flags=-c -g -x assembler-with-cpp -MMD
+compiler.cpp.cmd=arm-none-eabi-g++
+compiler.cpp.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.optimization_flags} {compiler.warning_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD
+compiler.ar.cmd=arm-none-eabi-ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=arm-none-eabi-objcopy
+compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
+compiler.elf2hex.bin.flags=-O binary
+compiler.elf2hex.hex.flags=-O ihex -R .eeprom
+compiler.elf2hex.cmd=arm-none-eabi-objcopy
+compiler.ldflags=-mcpu={build.mcu} -mthumb -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align
+compiler.size.cmd=arm-none-eabi-size
+compiler.define=-DARDUINO=
+compiler.readelf.cmd=arm-none-eabi-readelf
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.cpp.extra_flags=
+compiler.S.extra_flags=
+compiler.ar.extra_flags=
+compiler.elf2hex.extra_flags=
+compiler.arm.cmsis.c.flags="-I{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Include/" "-I{runtime.tools.CMSIS-Atmel-1.2.0.path}/CMSIS/Device/ATMEL/"
+compiler.arm.cmsis.ldflags="-L{runtime.tools.CMSIS-4.5.0.path}/CMSIS/Lib/GCC/" -larm_cortexM0l_math
+compiler.libraries.ldflags=
+build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DUSBCON '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.S.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{object_file}"
+archive_file_path={build.path}/{archive_file}
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nano.specs --specs=nosys.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} {compiler.libraries.ldflags} -Wl,--start-group {compiler.arm.cmsis.ldflags} -lm "{build.path}/{archive_file}" -Wl,--end-group
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+build.preferred_out_format=bin
+recipe.output.tmp_file={build.project_name}.{build.preferred_out_format}
+recipe.output.save_file={build.project_name}.{build.variant}.{build.preferred_out_format}
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.text|\.data|)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
+tools.avrdude.path={runtime.tools.avrdude.path}
+tools.avrdude.cmd={path}/bin/avrdude
+tools.avrdude.config.path={path}/etc/avrdude.conf
+tools.avrdude.upload.params.verbose=-v -v
+tools.avrdude.upload.params.quiet=-q -q
+tools.avrdude.upload.params.noverify=-V
+tools.avrdude.upload.pattern="{cmd}" "-C{config.path}" {upload.verbose} -p{build.emu.mcu} -c{upload.protocol} -P{serial.port} -b{upload.speed} "-Uflash:w:{build.path}/{build.project_name}.hex:i"
+tools.avrdude_remote.upload.pattern="openocd --version 2&gt;&amp;1 | grep 2016 &amp;&amp; if opkg update; then opkg upgrade openocd; exit 1; else echo 'Please connect your board to the Internet in order to upgrade tools' &gt;&amp;2; exit 1; fi || /usr/bin/run-avrdude /tmp/sketch.hex"
+tools.avrdude.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.avrdude.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.bossac.path={runtime.tools.bossac-1.7.0-arduino3.path}
+tools.bossac.cmd=bossac.exe
+tools.bossac.cmd.windows=bossac.exe
+tools.bossac.upload.params.verbose=-i -d
+tools.bossac.upload.params.quiet=
+tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -i -e -w -v "{build.path}/{build.project_name}.bin" -R
+tools.bossac_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
+tools.bossac.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.bossac.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.bossacI.path={runtime.tools.bossac-1.7.0-arduino3.path}
+tools.bossacI.cmd=bossac.exe
+tools.bossacI.cmd.windows=bossac.exe
+tools.bossacI.upload.params.verbose=-i -d
+tools.bossacI.upload.params.quiet=
+tools.bossacI.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -I -U {upload.native_usb} -i -e -w "{build.path}/{build.project_name}.bin" -R
+tools.bossacI_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
+tools.bossacI.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.bossacI.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.openocd.path={runtime.tools.openocd-0.10.0-arduino7.path}
+tools.openocd.cmd=bin/openocd.exe
+tools.openocd.cmd.windows=bin/openocd.exe
+tools.openocd.upload.params.verbose=-d2
+tools.openocd.upload.params.quiet=-d0
+tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown"
+tools.openocd.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
+tools.openocd.upload.network_pattern={network_cmd} -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.openocd.program.params.verbose=-d2
+tools.openocd.program.params.quiet=-d0
+tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd.erase.params.verbose=-d3
+tools.openocd.erase.params.quiet=-d0
+tools.openocd.erase.pattern=
+tools.openocd.bootloader.params.verbose=-d2
+tools.openocd.bootloader.params.quiet=-d0
+tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.openocd-withbootsize.path={runtime.tools.openocd-0.10.0-arduino7.path}
+tools.openocd-withbootsize.cmd=bin/openocd.exe
+tools.openocd-withbootsize.cmd.windows=bin/openocd.exe
+tools.openocd-withbootsize.upload.params.verbose=-d2
+tools.openocd-withbootsize.upload.params.quiet=-d0
+tools.openocd-withbootsize.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown"
+tools.openocd-withbootsize.program.params.verbose=-d2
+tools.openocd-withbootsize.program.params.quiet=-d0
+tools.openocd-withbootsize.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd-withbootsize.erase.params.verbose=-d3
+tools.openocd-withbootsize.erase.params.quiet=-d0
+tools.openocd-withbootsize.erase.pattern=
+tools.openocd-withbootsize.bootloader.params.verbose=-d2
+tools.openocd-withbootsize.bootloader.params.quiet=-d0
+tools.openocd-withbootsize.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+tools.gdb.cmd=arm-none-eabi-gdb.exe
+tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
+tools.gdb.debug.pattern="{path}/{cmd}" --interpreter=mi2 -ex "set pagination off" -ex 'target extended-remote | {tools.openocd.path}/{tools.openocd.cmd} -s "{tools.openocd.path}/share/openocd/scripts/" --file "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "gdb_port pipe" -c "telnet_port 0"' {build.path}/{build.project_name}.elf
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\q0a01aps.ss4\Micro Platforms\arduino16x
+edbg.name=Atmel EDBG
+edbg.communication=USB
+edbg.protocol=
+edbg.program.protocol=
+edbg.program.tool=openocd
+edbg.program.extra_params=
+atmel_ice.name=Atmel-ICE
+atmel_ice.communication=USB
+atmel_ice.protocol=
+atmel_ice.program.protocol=
+atmel_ice.program.tool=openocd
+atmel_ice.program.extra_params=
+sam_ice.name=Atmel SAM-ICE
+sam_ice.communication=USB
+sam_ice.protocol=
+sam_ice.program.protocol=
+sam_ice.program.tool=openocd
+sam_ice.program.extra_params=
+runtime.tools.arm-none-eabi-gcc.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARM-NO~1\7-2017q4
+runtime.tools.arm-none-eabi-gcc-7-2017q4.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARM-NO~1\7-2017q4
+runtime.tools.openocd.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\openocd\010~1.0-A
+runtime.tools.openocd-0.10.0-arduino7.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\openocd\010~1.0-A
+runtime.tools.CMSIS.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS\4583DE~1.0
+runtime.tools.CMSIS-4.5.0.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS\4583DE~1.0
+runtime.tools.CMSIS-Atmel.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS-~1\125586~1.0
+runtime.tools.CMSIS-Atmel-1.2.0.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\CMSIS-~1\125586~1.0
+runtime.tools.arduinoOTA.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARDUIN~1\120584~1.1
+runtime.tools.arduinoOTA-1.2.1.path=C:\Users\micha\AppData\Local\ARDUIN~1\packages\arduino\tools\ARDUIN~1\120584~1.1
+runtime.vm.boardinfo.id=mkr1000
+runtime.vm.boardinfo.name=mkr1000
+runtime.vm.boardinfo.desc=Arduino MKR1000
+runtime.vm.boardinfo.src_location=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+ide.hint=Ready-To-Go IDE: Use the Board and Library managers to install.
+ide.location.key=visualmicro
+ide.location.ide.auto=true
+ide.location.ide.winreg=Arduino Default Application
+ide.location.sketchbook.winreg=Arduino Default Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.8.13
+ide.default.version=10802
+ide.platforms.basedon=arduino16x
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.exe_name=arduino
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.hosts=atmel
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+ide.location.preferences.arduinoData={runtime.sketchbook.path}\ArduinoData
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+ide.debug_menu.debugger_type=Debug
+ide.debug_menu.debugger_type.none=Off
+ide.debug_menu.none.debug.tool=no_debug
+ide.debug_menu.debugger_type.universal=Serial
+ide.debug_menu.universal.debug.tool=auto
+ide.debug_menu.debugger_type.hwdebugger=Hardware
+ide.debug_menu.hwdebugger=Debugger
+ide.debug_menu.hwdebugger.custom_debugger=Manual/Custom
+ide.debug_menu.hwdebugger.custom_debugger.debug.tool=dbg_external
+ide.meta_custom_debugger.sentence=Provides a build that includes debug defines and will launch a custom debugger if one is provided.
+ide.meta_custom_debugger.paragraph=This is option is for advanced use. It is recommended that a pre-configured debugger be selected when available in this list. Usage: Optionally add a customer debugger to the project. A 'debugger_launch.json' file shares the same command syntax that is used by the VsCode debugger. Custom debuggers can be targeted at a board and/or variant and/or configuration name. IE: [variant].[configuration_name][.]debugger_launch.json
+ide.meta_custom_debugger.reference.usage.url=https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md#customlaunchsetupcommands
+ide.meta_custom_debugger.reference.connect.url=https://docs.microsoft.com/en-us/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2019
+ide.compiler_flags_no_opt=-O0
+ide.debug_menu.vm_disable_optimization=Disable Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_default=Default Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj=No Project  Optimization
+ide.debug_menu.vm_disable_opt_proj.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj_libs=No Project + Libraries Optimization
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_all=No Optimization
+ide.meta_vm_disable_opt_all.sentence=Disable compiler optimization for all sources:- Project, Library and Platform.
+ide.meta_vm_disable_opt_all.comment=After switching between 'No Optimization' and other optimization values, please click "Solution Clean" or switch off (or cycle) 'vMicro&gt;Compiler&gt;Shared Cache For Cores'. NOTE: Changing optimization settings can cause build errors or result in overly large programs.
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_core={ide.compiler_flags_no_opt}
+ide.appid=visualmicro
+location.sketchbook=C:\Users\micha\Documents\Arduino
+build.core.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6\cores\arduino
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+runtime.platform.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\hardware\samd\1.8.6
+vm.platformname.name=samd
+build.arch=SAMD
+build.project_name=ftu_embedded.ino
+build.project_path=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded
+sketch_path=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded
+ProjectDir=C:\Users\micha\Desktop\ftu-arduino\ftu_embedded\
+build.path=C:\Users\micha\AppData\Local\Temp\VMBuilds\FTU_EM~1\mkr1000\Debug
+vm.sketch_ino_cpp_name=ftu_embedded.cpp
+builder.noino=false
+tools.ctags.path={runtime.tools.ctags.path}
+tools.ctags.cmd.path={path}/ctags
+tools.ctags.pattern="{cmd.path}" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "{source_file}"
+preproc.macros.flags=-w -x c++ -E -CC
+preproc.defines.flags=-w -x c++ -E -dM
+recipe.preproc.macros="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {preproc.macros.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.cpp.extra_flags} {build.extra_flags} {compiler.arm.cmsis.c.flags} {includes} "{source_file}" -o "{preprocessed_file_path}"
+build.architecture=7-2017q4
+vmresolved.compiler.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4\bin\
+vmresolved.tools.path=C:\Users\micha\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+</arduino.board.property_bag>
+        <arduino.build.mcu>cortex-m0plus</arduino.build.mcu>
+        <arduino.build.f_cpu>48000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>sam-ba</arduino.upload.protocol>
+        <arduino.upload.maximum_size>262144</arduino.upload.maximum_size>
+        <visualmicro.application.name>visualmicro</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>samd</visualmicro.platform.name>
+        <config.Debug.customdebug_mkr1000_vm_disable_optimization>vm_disable_opt_default</config.Debug.customdebug_mkr1000_vm_disable_optimization>
+        <arduino.upload.port>COM3</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>
