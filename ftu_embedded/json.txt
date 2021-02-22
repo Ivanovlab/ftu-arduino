@@ -1,1 +1,1 @@
-{"serial_rate":1000,"time":300,"temp":{"temperature":125,"enable":0},"v_stress":{"voltage":1750,"enable":0}}
+{"serial_rate":500,"time":30,"adc_scan":{"hsr_channels":8,"hsr_samples":150,"lsr_samples":10},"heater":{"temperature":125,"enable":0},"v_stress":{"voltage":3300,"enable":0}}

@@ -76,58 +76,10 @@ void init_tc3(){
 	while (TC3->COUNT16.STATUS.bit.SYNCBUSY);
 }
 
-void init_tc4(){
-	// Configure TC4 (16 bit counter by default)
-	REG_TC4_COUNT16_CC0 = counter_value(1,256,10000);  //set period for timer
-	while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
-	NVIC_EnableIRQ(TC4_IRQn);         // Connect TC4 to Nested Vector Interrupt Controller (NVIC)
-	REG_TC4_INTFLAG |= TC_INTFLAG_OVF; //TC_INTFLAG_MC1 | TC_INTFLAG_MC0 ;        // Clear the interrupt flags (overflow flag)
-	REG_TC4_INTENSET |= TC_INTENSET_OVF; //TC_INTENSET_MC1 | TC_INTENSET_MC0 ;     // Enable TC4 counter interrupts
-	REG_TC4_CTRLA = TC_CTRLA_WAVEGEN_MFRQ | //this makes CC0 register have the top  value before the overflow interrupt
-	TC_CTRLA_MODE_COUNT16 |         //set as a 16 bit counter
-	TC_CTRLA_PRESCALER_DIV256 |     // Set prescaler to 256,
-	TC_CTRLA_ENABLE;               // Enable TC4
-	while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
-}
-
-void init_tc5(){
-	REG_TC5_COUNT16_CC0 =  counter_value(1,64,10000);// Set the TC4 CC1 register to  decimal 3905, 1 msec
-	while (TC5->COUNT16.STATUS.bit.SYNCBUSY);
-	NVIC_EnableIRQ(TC5_IRQn);         // Connect TC4 to Nested Vector Interrupt Controller (NVIC)
-	NVIC_SetPriority(TC5_IRQn,0);
-	REG_TC5_INTFLAG |= TC_INTFLAG_OVF;        // Clear the interrupt flags
-	REG_TC5_INTENSET |= TC_INTENSET_OVF;     // Enable TC5 Match CC0 and CC1 interrupts
-	REG_TC5_CTRLA = TC_CTRLA_WAVEGEN_MFRQ | //this makes CC0 register have the top  value before the overflow interrupt
-	TC_CTRLA_MODE_COUNT16 |        //set as a 16 bit counter
-	TC_CTRLA_PRESCALER_DIV64 |     
-	TC_CTRLA_ENABLE;
-	while (TC5->COUNT16.STATUS.bit.SYNCBUSY);
-}
-
 void TC3_Handler(){
 	if (TC3->COUNT16.INTFLAG.bit.OVF && TC3->COUNT16.INTENSET.bit.OVF){
 		serial_signal = true;
 		REG_TC3_INTFLAG = TC_INTFLAG_OVF; // Clear the OVF interrupt flag
-	}
-}
-
-void TC4_Handler(){ 
-	if (TC4->COUNT16.INTFLAG.bit.OVF && TC4->COUNT16.INTENSET.bit.OVF){
-		REG_TC4_INTFLAG = TC_INTFLAG_OVF;
-	}
-}
-
-void TC5_Handler(){
-	int count;
-	if (TC5->COUNT16.INTFLAG.bit.OVF && TC5->COUNT16.INTENSET.bit.OVF){
-		count++;
-		if(digitalRead(q13)&&digitalRead(q12)&&digitalRead(q11)){
-			digitalWrite(clr_freq_divider,HIGH);
-			q13_count = count;
-			count = 0;
-		}
-		else digitalWrite(clr_freq_divider,LOW);
-		REG_TC5_INTFLAG = TC_INTFLAG_OVF;
 	}
 }
 

@@ -4,17 +4,21 @@
 void system_fsm_run (int system_fsm_state){
 
 	switch (system_fsm_state){
-		case IDLE :{
-			pin_setup();
-		}
+		case IDLE : pin_setup();
 		break;
 		case ADC_UPDATE:{
-			adc_fixed_scan(adc_fixed_array,HSR_samples_per_channel);
-			adc_auto_scan(adc_auto_array,LSR_samples_per_channel);
+			adc_auto_scan(adc_auto_array,LSR_samples_per_channel,adc_vref);
+			adc_fixed_scan(adc_fixed_array,HSR_samples_per_channel,adc_vref);
+			double vref_array[10] = {0};
+			for(int i=0; i<LSR_samples_per_channel; i++) vref_array[i] = adc_auto_array[i][18];
+			adc_vref = average_of_readings(vref_array, LSR_samples_per_channel);
 		}
 		break;	
 		case DAC_UPDATE:{
-			vstr_measured = (float)adc_auto_array[0][8];
+			double vstr_array[20] = {0};
+			for(int i=0; i<LSR_samples_per_channel; i++) vstr_array[i] = adc_auto_array[i][0];
+			for(int i=LSR_samples_per_channel; i<LSR_samples_per_channel*2; i++) vstr_array[i] = adc_auto_array[i-LSR_samples_per_channel][1];
+			vstr_measured = average_of_readings(vstr_array, LSR_samples_per_channel*2);
 			float vstr_error = vstr_desired - vstr_measured;
 			if (vstr_error > 50) vstr_dac=vstr_dac+10;
 			else if (vstr_error > 4) vstr_dac++;
@@ -26,14 +30,16 @@ void system_fsm_run (int system_fsm_state){
 		}
 		break;
 		case HEATER_UPDATE:{
-			temp_measured=millivolt_to_celcius((float)adc_auto_array[0][22]);
-			current_time = millis();
-			float temp_error = temp_desired - temp_measured;
-			float elapsed_time = (float)(current_time - prev_time)/1000;
-			total_temp_error += temp_error*elapsed_time;
-			rate_temp_error = (temp_error - prev_temp_error)/elapsed_time;
-			prev_time = current_time;
-			prev_temp_error = temp_error;	
+			double temp_array[10] = {0};
+			for(int i=0; i<LSR_samples_per_channel; i++) temp_array[i] = adc_auto_array[i][14];
+			temp_measured = millivolt_to_celcius(average_of_readings(temp_array,LSR_samples_per_channel));
+			//current_time = millis();
+			//float temp_error = temp_desired - temp_measured;
+			//float elapsed_time = (float)(current_time - prev_time)/1000;     //temp PID control unused
+			//total_temp_error += temp_error*elapsed_time;
+			//rate_temp_error = (temp_error - prev_temp_error)/elapsed_time;
+			//prev_time = current_time;
+			//prev_temp_error = temp_error;	
 			if (temp_error > 1.5) temp_pwm++;
 			else if (temp_error < -1.5) temp_pwm--;
 			if (temp_pwm > 1000) temp_pwm = 1000;

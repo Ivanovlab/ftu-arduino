@@ -47,22 +47,17 @@
 RTCZero rtc;
 
 void setup() {
-  
   analogWriteResolution(10);
   analogReference(AR_INTERNAL2V23);
   pin_setup();
   delay(1000);
   adc_setup();
-  
   Serial.begin(BAUD_RATE); 
   while (!Serial) continue;
   receive_test_instructions();
   Serial.end();
-
   clock_setup();           //set up 1MHz clock for the timers
   init_tc3();              //set up TC3 whose interrupt sends serial data
-  init_tc4();              //initialize TC4 timer, TC4 generates the ADC read interrupt
-  init_tc5();              //TC5 is a 1 second counter
   __enable_irq();          //enable interrupts
 }
 
