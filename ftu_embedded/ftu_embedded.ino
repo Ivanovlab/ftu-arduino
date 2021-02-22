@@ -36,7 +36,7 @@
 //13h      20             AIN11          Single-ended 11
 //14h      21             AIN12          Single-ended 12
 //15h      22             AIN13          Single-ended 13
-//16h      23             AIN14          Single-ended 14
+//16h      25             AIN14          Single-ended 14
 //17h      24             AIN15          Single-ended 15
 //18h      25             OFFSET         Offset
 //1Ah      26             AVDD�AVSS      Power

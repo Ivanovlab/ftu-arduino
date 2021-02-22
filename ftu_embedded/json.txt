@@ -1,1 +1,1 @@
-{"serial_rate":250,"time":900,"temp":{"temperature":85,"enable":1},"v_stress":{"voltage":0,"enable":1}}
+{"serial_rate":1000,"time":300,"temp":{"temperature":125,"enable":0},"v_stress":{"voltage":1750,"enable":0}}
