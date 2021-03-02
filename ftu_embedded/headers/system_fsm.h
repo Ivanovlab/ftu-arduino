@@ -1,92 +1,53 @@
-/*
- * system_fsm.h
- *
- * Created: 2020-12-02 11:27:13 AM
- *  Author: Rohit
- */ 
-
-
 #ifndef SYSTEM_FSM_H_
 #define SYSTEM_FSM_H_
 
-
-/**
- * \@brief This state_machine runs the system
- * 
- * \@param 
- * 
- * \@return void
- */
 void system_fsm_run (int system_fsm_state){
-	//initialize variables	
+
 	switch (system_fsm_state){
-		case IDLE : {
-			if (test_stop){
-				//clear and turn off all the outputs
-				pin_setup(); //this will reset all the pins to their original values;
-				update_json_doc(test_id,test_stop,test_start,test_error,error_message,converted_adc_data,test_time_count,measured_temperature,measured_magnetic_field);
-				
-				if (serial_signal) {
-					send_data_to_serial();
-					serial_signal = false;
-					
-					//Reset device after communicating with Arduino
-					//NVIC_SystemReset();			
-				}
-				
-				
-			}
-			else if (test_start){
-				//1. Setting voltage stress for test
-				analogWrite(ctrl_vstr,set_dac(desired_fpga_voltage));
-				
-				//2. Setting time interval for sending data rate
-				
-				//Temporarily changed to counter file
-// 				REG_TC3_COUNT16_CC0 =  counter_value(1,1024,serial_output_rate);                     // Set the TC3 CC0 register
-// 				while (TC3->COUNT16.STATUS.bit.SYNCBUSY);											// Wait for synchronization
-			}
-			
+		case IDLE : pin_setup();
+		break;
+		case ADC_UPDATE:{
+			float vref_array[10] = {0};
+			sample_rate_array[1] = adc_auto_scan(adc_vref,adc_auto_array,LSR_samples_per_channel);
+			for(int i=0; i<LSR_samples_per_channel; i++) vref_array[i] = adc_auto_array[i][18];
+			adc_vref = average_of_readings(vref_array, LSR_samples_per_channel);
+			sample_rate_array[0] = adc_fixed_scan(adc_vref,adc_fixed_array,number_of_HSR_channels,HSR_samples_per_channel);
+		}
+		break;	
+		case DAC_UPDATE:{
+			float vstr_array[20] = {0};
+			for(int i=0; i<LSR_samples_per_channel; i++) vstr_array[i] = adc_auto_array[i][0];
+			for(int i=LSR_samples_per_channel; i<LSR_samples_per_channel*2; i++) vstr_array[i] = adc_auto_array[i-LSR_samples_per_channel][1];
+			vstr_measured = average_of_readings(vstr_array,LSR_samples_per_channel*2);
+			float vstr_error = vstr_desired - vstr_measured;
+			if (vstr_error > 50) vstr_dac=vstr_dac+10;
+			else if (vstr_error > 4) vstr_dac++;
+			else if (vstr_error < -50) vstr_dac=vstr_dac-10;
+			else if (vstr_error < -4) vstr_dac--;
+			if (vstr_dac > 700) vstr_dac = 700;
+			if (vstr_dac < 0) vstr_dac = 0;
+			analogWrite(vstr, vstr_dac);
 		}
 		break;
-		case ADC_UPDATE: {
-
-			//1. Update test timer and if time is hit, stop
-			if (test_time_count >= desired_time_for_test*60) test_stop=true;
-			
-			//2. Convert Raw ADC data to understandable values
-			adc_auto_scan(raw_adc_data); //converting ADC data
-			adc_array_convert(raw_adc_data,converted_adc_data); //converts the raw_adc_data into converted data
-			
+		case HEATER_UPDATE:{
+			float temp_array[10] = {0};
+			for(int i=0; i<LSR_samples_per_channel; i++) temp_array[i] = adc_auto_array[i][14];
+			temp_measured = millivolt_to_celcius(average_of_readings(temp_array,LSR_samples_per_channel));
+			float temp_error = temp_desired - temp_measured;
+			if (temp_error > 1.5) temp_pwm++;
+			else if (temp_error < -1.5) temp_pwm--;
+			if (temp_pwm > 1000) temp_pwm = 1000;
+			if (temp_pwm < 0) temp_pwm = 0;
+			analogWrite(heater, temp_pwm);
 		}
 		break;
 		case SERIAL_UPDATE:{
-			//1. Set Data to be sent to the user from the ADC update, data is sent in intervals in an Interrupt service routine
-			update_json_doc(test_id,test_stop,test_start,test_error,error_message,converted_adc_data,test_time_count,measured_temperature,measured_magnetic_field);
-			
-			if (serial_signal) {
-				send_data_to_serial(); //function to send json packet to serial port
-				serial_signal = false; //turn off the serial_signal flag
+			send_data_to_serial(adc_auto_array,adc_fixed_array,sample_rate_array);
+			serial_signal = false;
+			if (millis()>time_desired*1000) {
+				Serial.println("FINISHED");
+				idle = true;
 			}
-			
-		}
-		break;
-		case Heater_Update:{
-			//update actual and desired temperature, run heater click FSM
-			measured_temperature = millivolt_to_celcius((float) converted_adc_data[9]); //AIN1 in ADC converted DATA
-			heater_fsm_state = heater_fsm_transition(heater_fsm_state, measured_temperature, desired_temperature);
-			heater_pwm_duty = heater_fsm_run(heater_fsm_state, heater_pwm_duty, measured_temperature);
-			
-		}
-		break;
-		case Magnetic_Field_update:{
-			//update actual and desired magnetic field, fun magnetic field FSM
-			measured_magnetic_field = millivolts_to_milliTesla(converted_adc_data[8]);
-			//1.state_run
-			magnetic_pwm_duty = magnetic_fsm_run(magnetic_fsm_state,magnetic_pwm_duty);
-			//2. update the state
-			magnetic_fsm_state = magnetic_fsm_transition(magnetic_fsm_state, measured_magnetic_field, measured_magnetic_field);
-			
 		}
 		break;
 		default :system_fsm_state = IDLE;
@@ -94,49 +55,39 @@ void system_fsm_run (int system_fsm_state){
 	return;
 }
 
-/**
- * \@brief This function updates states for the System FSM
- * 
- * \@param 
- * 
- * \@return new state
- */
-int system_fsm_transition(int current_system_fsm_state, int test_start, int test_stop)
-{
+int system_fsm_transition(int current_system_fsm_state){
+
 	int next_state;
-	
-	if (test_stop) {
-		next_state = IDLE;	//else state = idle
-		return next_state;
-	}
-	
 	switch (current_system_fsm_state){
 		case IDLE : {
-			if (test_start) next_state =ADC_UPDATE;
+			if (!idle) next_state = ADC_UPDATE;
+			else next_state = IDLE;
 		}
 		break;
 		case ADC_UPDATE:{
-			next_state = SERIAL_UPDATE;
+			if(serial_signal){
+				if(en_vstress) next_state = DAC_UPDATE;
+				else if(en_temp) next_state = HEATER_UPDATE;
+				else next_state = SERIAL_UPDATE;
+			}
+			else next_state = ADC_UPDATE;
 		}
+		break;
+		case DAC_UPDATE:{
+			if(en_temp) next_state = HEATER_UPDATE;
+			else next_state = SERIAL_UPDATE;
+		}
+		break;
+		case HEATER_UPDATE: next_state = SERIAL_UPDATE;
 		break;
 		case SERIAL_UPDATE:{
-			next_state = Heater_Update;
+			if(idle) next_state = IDLE;
+			else next_state = ADC_UPDATE;
 		}
 		break;
-		case Heater_Update:{
-			next_state = Magnetic_Field_update;
-		}
-		break;
-		case Magnetic_Field_update:{
-			next_state = ADC_UPDATE;
-		}
-		break;
-		default :next_state = IDLE;
+		default: next_state = IDLE;
 	}
 	return next_state;
 }
 
-
-
-
-#endif /* SYSTEM_FSM_H_ */
+#endif
